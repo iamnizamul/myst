@@ -71,6 +71,14 @@ function showImage(image) {
   selectedImage.value = image;
 }
 
+console.log(item.value);
+
+function addToCart() {
+    console.log(item.value);
+    cartStore.addToCart(item.value)
+}
+
+console.log(cartStore.getItems.value);
 </script>
 
 <style>

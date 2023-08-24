@@ -2,7 +2,9 @@
   <div class="the-item-container">
       <router-link :to="'/itemdetails/' + id">
     <li :key="id">
+      <div class="image-container">
       <img :src="image" alt="" />
+      </div>
       <div class="desc-container">
         <h1>{{ brand }}</h1>
         <div class="title-container">
@@ -45,7 +47,7 @@ console.log(props.title);
   flex-direction: column;
   /* background-color: red; */
   /* justify-content: space-between; */
-  height: 52rem;
+  height: 37rem;
   /* background-color: red; */
   border-radius: 10px;
   overflow: hidden;
@@ -63,15 +65,19 @@ console.log(props.title);
     width: 100%; */
   /* background-color: #fff;
     margin-bottom: 2rem; */
+    height: 25rem;
+    width: 100%;
+    text-align: center;
+    /* background-color: red; */
 }
 
 .the-item-container img {
-  height: 80%;
+  height: 100%;
   width: 100%;
   object-fit: contain;
   /* padding: auto; */
   /* margin-bottom: 2rem; */
-  padding: 3rem;
+  padding: 2rem;
 }
 
 .the-item-container .desc-container {
@@ -79,7 +85,7 @@ console.log(props.title);
   background-color: #eee;
   background-color: #1e612b;
   /* display: flex; */
-  height: 11.5rem;
+  height: 12rem;
   padding: 1rem;
 }
 
