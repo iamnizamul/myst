@@ -17,10 +17,13 @@
 <script setup>
 import TheItem from "./TheItem.vue";
 import { useItemStore } from "../../store/itemStore.js";
+import { computed } from 'vue'
 
 const store = useItemStore();
 
-const items = store.getItems;
+const items = computed(() => store.getFilteredItems)
+
+// console.log(store.sortedItems);
 </script>
 
 <style scoped>

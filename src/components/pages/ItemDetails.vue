@@ -20,7 +20,7 @@
         <h5>Brand: {{ brand }}</h5>
         <h4>{{ title }}</h4>
         <div class="line"></div>
-        <h4>{{ price }}</h4>
+        <h4>Rs. {{ price }}</h4>
         <p>Inclusive of all taxes</p>
         <div class="line"></div>
         <ul>

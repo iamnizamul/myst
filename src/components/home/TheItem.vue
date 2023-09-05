@@ -10,7 +10,7 @@
         <div class="title-container">
           <h5>{{ title }}</h5>
         </div>
-        <h3>{{ price }}</h3>
+        <h3>Rs. {{ price }}</h3>
       </div>
     </li>
       </router-link>
