@@ -12,11 +12,11 @@ button {
     border: none;
     cursor: pointer;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-out;
 }
 
 button:hover,
 button:active {
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in;
 }
 </style>

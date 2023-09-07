@@ -1,7 +1,8 @@
 <template>
 <div>
+    <div class="cart-heading">My Cart</div>
     <div v-if="!items.length" class="empty-cart">
-        No, Items in the cart!!!
+        No items in the cart!!!
     </div>
 
     <div v-else class="my-cart-container">
@@ -32,11 +33,26 @@ console.log(items);
 </script>
 
 <style scoped>
+.cart-heading {
+    margin-top: 1.6rem;
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-color: #1e612b;
+}
+
 .empty-cart {
     text-align: center;
     font-size: 2.4rem;
     font-weight: 500;
-    padding: 2rem;
+    margin: 5rem 0;
+}
+
+.my-cart-container {
+    margin: 10rem 0;
+
 }
 
 .my-cart-container ul {
@@ -44,6 +60,13 @@ console.log(items);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15rem;
-  margin: 10rem 15rem;
+  /* margin: 10rem 0; */
+  place-items: center;
+}
+
+@media(max-width: 76em) {
+    .my-cart-container ul {
+        grid-template-columns: 1fr;
+    }
 }
 </style>

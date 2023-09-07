@@ -1,7 +1,7 @@
 <template>
   <div class="the-item-container">
-      <router-link :to="'/itemdetails/' + id">
     <li :key="id">
+      <router-link :to="'/itemdetails/' + id">
       <div class="image-container">
       <img :src="image" alt="" />
       </div>
@@ -12,12 +12,19 @@
         </div>
         <h3>Rs. {{ price }}</h3>
       </div>
-    </li>
       </router-link>
+      <div class="add-to-cart-button" @click="addToCart">
+        <h3>Add To Cart</h3>
+      </div>
+    </li>
   </div>
 </template>
 
 <script setup>
+import { useItemStore } from '../../store/itemStore.js'
+import { useCartStore } from '../../store/cartStore.js'
+import { ref } from 'vue';
+
 const props = defineProps({
   id: "id",
   image: "image",
@@ -25,6 +32,16 @@ const props = defineProps({
   title: "title",
   price: "price",
 });
+
+const itemStore = useItemStore();
+const cartStore = useCartStore();
+
+const item = ref('');
+item.value = itemStore.findItem(props.id);
+
+function addToCart() {
+  cartStore.addToCart(item.value)
+}
 
 
 console.log(props.title);
@@ -47,11 +64,12 @@ console.log(props.title);
   flex-direction: column;
   /* background-color: red; */
   /* justify-content: space-between; */
-  height: 37rem;
+  height: 42rem;
+  width: 30rem;
   /* background-color: red; */
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 1.2rem 1.2rem #eee;
+  box-shadow: 0 0 1.2rem 1.2rem #d2dfd5;
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -83,7 +101,7 @@ console.log(props.title);
 .the-item-container .desc-container {
   vertical-align: bottom;
   background-color: #eee;
-  background-color: #1e612b;
+  /* background-color: #1e612b; */
   /* display: flex; */
   height: 12rem;
   padding: 1rem;
@@ -91,9 +109,9 @@ console.log(props.title);
 
 .the-item-container h1 {
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 0.8rem;
-  color: #eee;
+  color: #000;
 }
 
 .the-item-container .title-container {
@@ -105,16 +123,45 @@ console.log(props.title);
 .the-item-container h5 {
   font-size: 1.8rem;
   font-weight: 300;
-  color: #ddd;
+  color: #333;
 }
 
 .the-item-container h3 {
   font-size: 1.8rem;
-  font-weight: 400;
-  color: #eee;
+  font-weight: 500;
+  color: #111;
+}
+
+.add-to-cart-button {
+  background-color: #1e612b;
+  height: 5rem;
+  width: 100%;
+  padding: 1.5rem;
+  margin: auto;
+  /* vertical-align: middle; */
+}
+
+.add-to-cart-button h3 {
+  color: #fff;
+  /* vertical-align: middle; */
+  /* margin: auto; */
 }
 
 a {
   text-decoration: none;
+}
+
+@media(max-width: 86em) {
+  .the-item-container li {
+    width: 25rem;
+  }
+}
+
+@media(max-width:37.5rem) {
+  .the-item-container li {
+    /* width: 30rem; */
+    /* margin: 0; */
+    margin-right: 0 !important;
+  }
 }
 </style>

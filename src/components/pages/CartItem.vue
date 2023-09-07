@@ -80,6 +80,7 @@ function remove() {
   border: 2px solid #1e612b;
   /* background-color: red; */
   position: relative;
+  width: 50rem;
 }
 
 .close {

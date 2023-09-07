@@ -13,8 +13,16 @@ import ItemsList from '../home/ItemsList.vue'
 <style scoped>
 .container {
     /* background: blue; */
-    width: 100%;
+    /* width: 100%; */
     display: grid;
     grid-template-columns: 1fr 6fr;
+    /* overflow-x: scroll; */
+}
+
+@media (max-width: 37.5em) {
+    .container {
+        display: initial;
+        /* width: max-content */
+    }
 }
 </style>

@@ -23,8 +23,25 @@ html {
   font-size: 62.5%;
 }
 
+html,
+body {
+  /* height: 100vh; */
+  /* width: 100vw; */
+  /* overflow: auto; */
+  /* width: 100%; */
+}
+
 .base {
   /* background-color: #efffff; */
-  /* overflow-x: scroll; */
+  /* overflow: auto; */
+  /* overflow-x: auto; */
+  /* width: 100%; */
+  min-width: 100vh;
+}
+
+@media (max-width: 37.5em) {
+  html {
+    font-size: 50%;
+  }
 }
 </style>

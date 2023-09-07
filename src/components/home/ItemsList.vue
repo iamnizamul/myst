@@ -21,7 +21,7 @@ import { computed } from 'vue'
 
 const store = useItemStore();
 
-const items = computed(() => store.getFilteredItems)
+const items = computed(() => (store.searchItems.length ? store.searchItems : store.getFilteredItems))
 
 // console.log(store.sortedItems);
 </script>
@@ -30,7 +30,8 @@ const items = computed(() => store.getFilteredItems)
 .items-list-container {
   /* background: red; */
   /* width: 100%; */
-  margin: 12rem;
+  margin: 12rem auto;
+  padding: 0 6rem;
 }
 
 ul {
@@ -39,4 +40,24 @@ ul {
   grid-template-columns: repeat(3, 1fr);
   gap: 10rem;
 }
+
+@media(max-width: 93em) {
+  .items-list-container {
+    margin: 12rem auto;
+  }
+
+  ul {
+    gap: 7rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    /* place-items: center; */
+    margin: 12rem auto;
+  }
+}
+
 </style>

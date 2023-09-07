@@ -1,45 +1,68 @@
 <template>
-  <div class="helper-container">
-      <h2 class="header-filter">GENDER</h2>
-    <div class="gender-filter">
-      <input type="checkbox" id="men" name="gender" @click="genderMen" checked @change="setFilter"/>
-      <label for="men" @click="genderMen">Men</label><br>
-      <input type="checkbox" id="women" name="gender" @click="genderWomen" checked @change="setFilter"/>
-      <label for="women" @click="genderWomen">Women</label>
+  <!-- <div> -->
+    <div class="helper-container-desktop helper-container-palmtop">
+      <div class="gender-filter">
+        <h2 class="header-filter">GENDER</h2>
+        <input
+          type="checkbox"
+          id="men"
+          :checked="filters.men"
+          @change="setFilter"
+        />
+        <label for="men" @click="genderMen">Men</label><br />
+        <input
+          type="checkbox"
+          id="women"
+          :checked="filters.women"
+          @change="setFilter"
+        />
+        <label for="women" @click="genderWomen">Women</label>
+      </div>
+      <div class="style-filter">
+        <h2 class="header-filter">STYLES</h2>
+        <input
+          type="checkbox"
+          id="tshirts"
+          :checked="filters.tshirts"
+          @change="setFilter"
+        />
+        <label for="tshirts">TShirts</label><br />
+        <input
+          type="checkbox"
+          id="shoes"
+          :checked="filters.shoes"
+          @change="setFilter"
+        />
+        <label for="shoes">Shoes</label>
+      </div>
     </div>
-    <div class="style-filter">
-      <h2 class="header-filter">STYLES</h2>
-      <input type="checkbox" id="tshirts" name="styles" @click="styleTshirts" checked @change="setFilter"/>
-      <label for="tshirts">TShirts</label><br />
-      <input type="checkbox" id="shoes" name="styles" @click="styleShoes" checked @change="setFilter"/>
-      <label for="shoes">Shoes</label>
-    </div>
-  </div>
+    <!-- <div class="helper-container-palmtop">jhbmjhb</div> -->
+  <!-- </div> -->
 </template>
 
 <script setup>
-import { useItemStore } from '../../store/itemStore.js'
+import { useItemStore } from "../../store/itemStore.js";
 // import { reactive } from 'vue';
 
 const itemStore = useItemStore();
 
 let filters = {
-  men: true,
-  women: true,
-  tshirts: true,
-  shoes: true
-}
+  men: itemStore.activeFilters.men,
+  women: itemStore.activeFilters.women,
+  tshirts: itemStore.activeFilters.tshirts,
+  shoes: itemStore.activeFilters.shoes,
+};
 
 function setFilter(event) {
   const inputId = event.target.id;
   const isActive = event.target.checked;
   const updatedFilters = {
     ...filters,
-    [inputId]: isActive
-  }
+    [inputId]: isActive,
+  };
   filters = updatedFilters;
   console.log(filters);
-  itemStore.setFilter(filters)
+  itemStore.setFilter(filters);
 }
 
 // const gender = ref('');
@@ -60,14 +83,20 @@ function setFilter(event) {
 // function styleShoes() {
 //     itemStore.styleShoes()
 // }
-
 </script>
 
 <style scoped>
-.helper-container {
+.helper-container-desktop {
+  margin: 2rem;
+  border: 1px solid #1e612b;
+  border-radius: 11px;
   padding: 4rem;
-  background: #eee;
-  min-height: calc(100vh - 9.6rem);
+  /* background: #eee; */
+  /* min-height: calc(100vh - 9.6rem); */
+}
+
+.helper-container-palmtop {
+  /* display: none; */
 }
 
 .gender-filter {
@@ -97,6 +126,24 @@ label {
   vertical-align: middle;
 }
 
-br {
+@media(max-width: 37.5em) {
+  .helper-container-desktop {
+    /* width: 100%; */
+  }
+
+  .gender-filter {
+    display: flex;
+    align-items: center;
+  }
+
+  .style-filter {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-filter {
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
 }
 </style>

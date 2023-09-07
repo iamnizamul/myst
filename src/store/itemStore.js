@@ -73,6 +73,7 @@ export const useItemStore = defineStore({
                 },
                 
             ],
+            searchItems: [],
             // gender: '',
             // styles: [],
             // sortedItems1: [],
@@ -113,24 +114,6 @@ export const useItemStore = defineStore({
                     }
                     return false
                 }
-                // if (this.activeFilters.tshirts && (item.styles === 'tshirts')) {
-                //     if (this.activeFilters.men && item.gender.includes('men')) {
-                //         return true
-                //     }
-                //     if (this.activeFilters.women && item.gender.includes('women')) {
-                //         return true
-                //     }
-                //     return false
-                // }
-                // if (this.activeFilters.shoes && (item.styles === 'shoes')) {
-                //     if (this.activeFilters.men && item.gender.includes('men')) {
-                //         return true
-                //     }
-                //     if (this.activeFilters.women && item.gender.includes('women')) {
-                //         return true
-                //     }
-                //     return false
-                // }
                 
                 return false
 
@@ -149,7 +132,7 @@ export const useItemStore = defineStore({
             this.activeFilters.tshirts = data.tshirts;
             this.activeFilters.shoes = data.shoes;
             console.log(this.activeFilters);
-        }
+        },
         // genderMen() {
         //     this.gender = ['men', 'unisex'];
         //     console.log(this.items.filter((item) => this.gender.includes(item.gender)));
@@ -185,5 +168,11 @@ export const useItemStore = defineStore({
         //     console.log('first:', this.sortedItems1, 'second:', this.sortedItems2);
         //     console.log(this.sortedItems);
         // }
+        searchItems(searchText) {
+            console.log(searchText);
+            const searchTextLower = searchText.toLowerCase()
+            this.searchItems = this.items.filter((item) => item.title.toLowerCase().includes(searchTextLower));
+            console.log(this.searchItems);
+        }
     }
 })
