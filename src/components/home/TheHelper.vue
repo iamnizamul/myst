@@ -122,6 +122,8 @@ function setFilter(event) {
 input[type="radio"],
 input[type="checkbox"] {
   accent-color: #1e612b;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 input[type="radio"] + label,

@@ -15,8 +15,8 @@
           <h5>{{ title }}</h5>
         </div>
         <h4>Rs. {{ price }}</h4>
-        <div class="line"></div>
-        <div class="quantity">
+        <!-- <div class="line"></div> -->
+        <div class="quantity top-border">
           <h3>Quantity</h3>
           <div class="count">
             <!-- <button class="add">
@@ -153,9 +153,9 @@ cursor: pointer;
 
 .cart-item-container .cart-details-container .line {
 /* margin-bottom: 2rem; */
-position: absolute;
+/* position: absolute;
 border: 1px solid #1e612b;
-width: 85%;
+width: 85%; */
 /* left: -0.02rem; */
 /* padding: 0; */
 }
@@ -172,16 +172,20 @@ width: 85%;
   justify-content: space-between;
 }
 
+.top-border {
+    border-top: 1px solid #1e612b;
+}
+
 .count {
   display: flex;
   /* align-items: center; */
-  gap: 10px;
+  gap: 1rem;
 }
 
 .plus,
 .minus {
   background-color: #eee;
-  padding: 0 8px;
+  padding: 0 1rem;
   cursor: pointer;
 }
 

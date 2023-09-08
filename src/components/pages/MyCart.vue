@@ -18,6 +18,7 @@
                 :total="item.total">
                 </cart-item>
         </ul>
+        <base-button class="checkout">Checkout</base-button>
     </div>
 </div>
 </template>
@@ -70,9 +71,20 @@ console.log(items);
   /* text-align: center; */
 }
 
+.checkout {
+  margin: 5rem 0;
+  cursor: pointer;
+  background-color: #1e612b;
+  color: #fff;
+}
+
+.checkout:hover {
+    background-color: #123a1a;
+}
+
 @media(max-width:76em) {
     .my-cart-container {
-        /* padding-left: 8rem; */
+        padding-left: 8rem;
     }
 }
 
