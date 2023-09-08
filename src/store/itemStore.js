@@ -80,10 +80,10 @@ export const useItemStore = defineStore({
             // sortedItems2: [],
             // sortedItems: []
             activeFilters: {
-                men: true,
-                women: true,
-                tshirts: true,
-                shoes: true
+                men: false,
+                women: false,
+                tshirts: false,
+                shoes: false
             }
         }
     },
@@ -103,6 +103,9 @@ export const useItemStore = defineStore({
                     if (this.activeFilters.shoes && (item.styles === 'shoes')) {
                         return true
                     }
+                    if (this.activeFilters.tshirts === false && this.activeFilters.shoes === false) {
+                        return true
+                    }
                     return false
                 }
                 if (this.activeFilters.women && item.gender.includes('women')) {
@@ -110,6 +113,34 @@ export const useItemStore = defineStore({
                         return true
                     }
                     if (this.activeFilters.shoes && (item.styles === 'shoes')) {
+                        return true
+                    }
+                    if (this.activeFilters.tshirts === false && this.activeFilters.shoes === false) {
+                        return true
+                    }
+                    return false
+                }
+
+                if (this.activeFilters.tshirts && item.styles.includes('tshirts')) {
+                    if (this.activeFilters.men && (item.gender === 'men')) {
+                        return true
+                    }
+                    if (this.activeFilters.women && (item.gender === 'women')) {
+                        return true
+                    }
+                    if (this.activeFilters.men === false && this.activeFilters.women === false) {
+                        return true
+                    }
+                    return false
+                }
+                if (this.activeFilters.shoes && item.styles.includes('shoes')) {
+                    if (this.activeFilters.men && (item.gender === 'men')) {
+                        return true
+                    }
+                    if (this.activeFilters.women && (item.gender === 'women')) {
+                        return true
+                    }
+                    if (this.activeFilters.men === false && this.activeFilters.women === false) {
                         return true
                     }
                     return false

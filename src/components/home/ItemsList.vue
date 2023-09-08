@@ -21,7 +21,8 @@ import { computed } from 'vue'
 
 const store = useItemStore();
 
-const items = computed(() => (store.searchItems.length ? store.searchItems : store.getFilteredItems))
+// const items = computed(() => (store.searchItems.length ? store.searchItems : store.getFilteredItems))
+const items = computed(() => (store.getFilteredItems.length? store.getFilteredItems : store.items))
 
 // console.log(store.sortedItems);
 </script>
