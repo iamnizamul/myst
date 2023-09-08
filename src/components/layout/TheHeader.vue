@@ -135,14 +135,14 @@ a {
 
 @media (max-width: 76em) {
   .container {
-    width: 120rem;
+    width: 122rem;
     /* min-width: 11rem; */
   }
 }
 
 @media (max-width: 37.5em) {
   .container {
-    width: 100%;
+    width: 100vw;
   }
 }
 </style>

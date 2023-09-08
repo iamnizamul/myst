@@ -21,27 +21,25 @@ import TheHeader from "./components/layout/TheHeader.vue";
 
 html {
   font-size: 62.5%;
+  height: 100vh;
 }
 
-html,
-body {
-  /* height: 100vh; */
-  /* width: 100vw; */
-  /* overflow: auto; */
-  /* width: 100%; */
-}
-
-.base {
-  /* background-color: #efffff; */
-  /* overflow: auto; */
-  /* overflow-x: auto; */
-  /* width: 100%; */
-  min-width: 100vh;
+@media(max-width: 76em) {
+  html {
+    overflow: auto;
+  }
 }
 
 @media (max-width: 37.5em) {
   html {
-    font-size: 50%;
+    font-size: 45%;
+    overflow-x: hidden;
+  }
+}
+
+@media(max-width: 30em) {
+  html {
+    font-size: 35%;
   }
 }
 </style>

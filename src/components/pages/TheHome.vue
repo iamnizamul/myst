@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <the-helper></the-helper>
-        <items-list></items-list>
+        <the-helper class="the-helper"></the-helper>
+        <items-list class="home-item-list"></items-list>
     </div>
 </template>
 
@@ -12,17 +12,13 @@ import ItemsList from '../home/ItemsList.vue'
 
 <style scoped>
 .container {
-    /* background: blue; */
-    /* width: 100%; */
     display: grid;
     grid-template-columns: 1fr 6fr;
-    /* overflow-x: scroll; */
 }
 
 @media (max-width: 37.5em) {
     .container {
         display: initial;
-        /* width: max-content */
     }
 }
 </style>

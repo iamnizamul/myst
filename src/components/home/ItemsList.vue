@@ -28,35 +28,39 @@ const items = computed(() => (store.searchItems.length ? store.searchItems : sto
 
 <style scoped>
 .items-list-container {
-  /* background: red; */
-  /* width: 100%; */
-  margin: 12rem auto;
-  padding: 0 6rem;
-}
+  margin: 0 auto;
+  padding: 10rem 5rem;
+  text-align: center;
+ }
 
-ul {
+.items-list-container ul {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10rem;
+  width: max-content;
 }
 
 @media(max-width: 93em) {
-  .items-list-container {
-    margin: 12rem auto;
-  }
-
-  ul {
+  .items-list-container ul {
     gap: 7rem;
   }
 }
 
 @media (max-width: 37.5em) {
-  ul {
+  .items-list-container {
+    text-align: center;
+    padding: 3rem 0 3rem 0 ;
+  }
+
+  .items-list-container ul {
     grid-template-columns: repeat(2, 1fr);
     gap: 5rem;
-    /* place-items: center; */
-    margin: 12rem auto;
+    /* text-align: center; */
+    margin: 0 auto;
+  }
+
+  .items-list-container {
   }
 }
 

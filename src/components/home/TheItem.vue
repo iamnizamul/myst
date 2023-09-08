@@ -48,25 +48,12 @@ console.log(props.title);
 </script>
 
 <style scoped>
-.the-item-container {
-  /* display: grid; */
-  /* grid-template-columns: repeat(3, 1fr); */
-  /* background: blue; */
-  /* display: flex; */
-}
-
 .the-item-container li {
-  /* margin-bottom: 3rem; */
   text-align: center;
-  /* border: 2px solid black; */
-  /* padding: 3rem; */
   display: flex;
   flex-direction: column;
-  /* background-color: red; */
-  /* justify-content: space-between; */
   height: 42rem;
   width: 30rem;
-  /* background-color: red; */
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 1.2rem 1.2rem #d2dfd5;
@@ -79,30 +66,21 @@ console.log(props.title);
 }
 
 .image-container {
-  /* height: 100%;
-    width: 100%; */
-  /* background-color: #fff;
-    margin-bottom: 2rem; */
     height: 25rem;
     width: 100%;
     text-align: center;
-    /* background-color: red; */
 }
 
 .the-item-container img {
   height: 100%;
   width: 100%;
   object-fit: contain;
-  /* padding: auto; */
-  /* margin-bottom: 2rem; */
   padding: 2rem;
 }
 
 .the-item-container .desc-container {
   vertical-align: bottom;
   background-color: #eee;
-  /* background-color: #1e612b; */
-  /* display: flex; */
   height: 12rem;
   padding: 1rem;
 }
@@ -138,13 +116,10 @@ console.log(props.title);
   width: 100%;
   padding: 1.5rem;
   margin: auto;
-  /* vertical-align: middle; */
 }
 
 .add-to-cart-button h3 {
   color: #fff;
-  /* vertical-align: middle; */
-  /* margin: auto; */
 }
 
 a {
@@ -152,16 +127,14 @@ a {
 }
 
 @media(max-width: 86em) {
-  .the-item-container li {
+  .the-item-container li  {
     width: 25rem;
   }
 }
 
-@media(max-width:37.5rem) {
+@media(max-width:37.5em) {
   .the-item-container li {
-    /* width: 30rem; */
-    /* margin: 0; */
-    margin-right: 0 !important;
+    width: 25rem;
   }
 }
 </style>

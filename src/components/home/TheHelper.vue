@@ -1,6 +1,8 @@
 <template>
   <!-- <div> -->
     <div class="helper-container-desktop helper-container-palmtop">
+      <div class="sub-container">
+
       <div class="gender-filter">
         <h2 class="header-filter">GENDER</h2>
         <input
@@ -34,6 +36,7 @@
           @change="setFilter"
         />
         <label for="shoes">Shoes</label>
+      </div>
       </div>
     </div>
     <!-- <div class="helper-container-palmtop">jhbmjhb</div> -->
@@ -87,12 +90,20 @@ function setFilter(event) {
 
 <style scoped>
 .helper-container-desktop {
-  margin: 2rem;
+  margin: 2rem 2rem;
   border: 1px solid #1e612b;
   border-radius: 11px;
-  padding: 4rem;
+  /* text-align: center; */
+  padding: 1.8rem 3.6rem;
   /* background: #eee; */
   /* min-height: calc(100vh - 9.6rem); */
+}
+
+.helper-container-desktop .sub-container {
+  margin: 4rem auto;
+  /* background-color: red; */
+  /* text-align: center; */
+  width: max-content;
 }
 
 .helper-container-palmtop {
@@ -111,14 +122,13 @@ function setFilter(event) {
 input[type="radio"],
 input[type="checkbox"] {
   accent-color: #1e612b;
-  /* margin-bottom: 5px; */
 }
 
 input[type="radio"] + label,
 input[type="checkbox"] + label {
   font-weight: 500;
-  font-size: 1.2rem;
-  margin: 5px;
+  font-size: 1.5rem;
+  margin: 0.5rem;
 }
 
 input,
@@ -128,22 +138,38 @@ label {
 
 @media(max-width: 37.5em) {
   .helper-container-desktop {
-    /* width: 100%; */
+    /* width: calc(100vw - 6rem); */
+    /* padding: 2rem; */
+    width: 55rem;
+    margin: 2rem auto;
+    width: 80%;
+    text-align: center;
+  }
+
+  .helper-container-desktop .sub-container {
+    margin: 0 auto;
   }
 
   .gender-filter {
     display: flex;
     align-items: center;
+    margin-bottom: 1rem;
+    margin-left: 5rem;
   }
 
   .style-filter {
     display: flex;
     align-items: center;
+    margin-left: 5rem;
   }
 
   .header-filter {
     margin-bottom: 0;
     margin-right: 2rem;
+  }
+
+  .style-filter .header-filter {
+    margin-right: 2.4rem;
   }
 }
 </style>

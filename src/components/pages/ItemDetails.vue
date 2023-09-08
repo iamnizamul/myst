@@ -17,6 +17,8 @@
       </div>
     </div>
     <div class="item-description-container">
+      <!-- <div class="subcontainer"> -->
+
         <h5>Brand: {{ brand }}</h5>
         <h4>{{ title }}</h4>
         <div class="line"></div>
@@ -31,7 +33,8 @@
         <base-button class="add-to-cart" @click="addToCart">
             Add to Cart
         </base-button>
-    </div>
+      </div>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -84,11 +87,14 @@ console.log(cartStore.getItems.value);
 <style>
 .item-detail-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10rem;
+  grid-template-columns: 3fr 4fr;
+  gap: 15rem;
   /* text-align: center; */
-  margin: 5rem auto;
-  width: 120rem;
+  padding-top: 5rem;
+  margin: auto;
+  padding: 5rem;
+  width: max-content;
+  height: max-content;
 }
 
 .image-detail-container {
@@ -155,7 +161,8 @@ console.log(cartStore.getItems.value);
 
 .item-description-container {
   /* background: #bcd0bf; */
-  margin: auto 0;
+  margin: auto ;
+  width: max-content;
 }
 
 .item-description-container ul {
@@ -194,4 +201,12 @@ p {
     background-color: #15441e;
 }
 
+@media(max-width: 37.5em) {
+  .item-detail-container {
+    display: initial;
+  }
+  .image-list-container ul {
+    margin-bottom: 5rem;
+  }
+}
 </style>
