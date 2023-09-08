@@ -53,10 +53,8 @@ console.log(items);
 
 .my-cart-container {
     margin: 5rem auto;
-    /* background-color: red; */
     width: max-content;
     text-align: center;
-    /* padding-left: 9rem; */
 
 }
 
@@ -65,10 +63,6 @@ console.log(items);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 5rem;
-  /* margin: auto; */
-  /* margin: auto; */
-  /* place-items: center; */
-  /* text-align: center; */
 }
 
 .checkout {

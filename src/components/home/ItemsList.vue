@@ -20,11 +20,8 @@ import { useItemStore } from "../../store/itemStore.js";
 import { computed } from 'vue'
 
 const store = useItemStore();
-
-// const items = computed(() => (store.searchItems.length ? store.searchItems : store.getFilteredItems))
 const items = computed(() => (store.getFilteredItems.length? store.getFilteredItems : store.items))
 
-// console.log(store.sortedItems);
 </script>
 
 <style scoped>
@@ -57,11 +54,7 @@ const items = computed(() => (store.getFilteredItems.length? store.getFilteredIt
   .items-list-container ul {
     grid-template-columns: repeat(2, 1fr);
     gap: 5rem;
-    /* text-align: center; */
     margin: 0 auto;
-  }
-
-  .items-list-container {
   }
 }
 

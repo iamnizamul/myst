@@ -26,7 +26,8 @@ html {
 
 @media(max-width: 76em) {
   html {
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: auto;
   }
 }
 

@@ -73,12 +73,6 @@ export const useItemStore = defineStore({
                 },
                 
             ],
-            searchItems: [],
-            // gender: '',
-            // styles: [],
-            // sortedItems1: [],
-            // sortedItems2: [],
-            // sortedItems: []
             activeFilters: {
                 men: false,
                 women: false,
@@ -164,41 +158,6 @@ export const useItemStore = defineStore({
             this.activeFilters.shoes = data.shoes;
             console.log(this.activeFilters);
         },
-        // genderMen() {
-        //     this.gender = ['men', 'unisex'];
-        //     console.log(this.items.filter((item) => this.gender.includes(item.gender)));
-        //     this.sortItems();
-        // },
-        // genderWomen() {
-        //     this.gender = ['women', 'unisex'];
-        //     console.log(this.items.filter((item) => this.gender.includes(item.gender)));
-        //     this.sortItems();
-        // },        
-        // styleTshirts() {
-        //     if(!this.styles.includes('tshirts')) {
-        //         this.styles.push('tshirts')
-        //     } else this.styles.pop('tshirts')
-        //     console.log(this.items.filter((item) => this.styles.includes(item.styles)));
-        //     this.sortItems();
-        // },        
-        // styleShoes() {
-        //     if(!this.styles.includes('shoes')) {
-        //         this.styles.push('shoes')
-        //     } else this.styles.pop('shoes')
-        //     console.log(this.items.filter((item) => this.styles.includes(item.styles)));
-        //     this.sortItems();
-        // },
-        // sortItems() {
-        //     if (this.gender) {
-        //         this.sortedItems1 = this.items.filter((item) => this.gender.includes(item.gender))
-        //     } else this.sortedItems1 = this.items;
-        //     if (this.styles.length) {
-        //         this.sortedItems2 = this.items.filter((item) => this.styles.includes(item.styles));
-        //     } else this.sortedItems2 = this.items;
-        //     this.sortedItems = this.sortedItems1.filter((item) => this.sortedItems2.includes(item))
-        //     console.log('first:', this.sortedItems1, 'second:', this.sortedItems2);
-        //     console.log(this.sortedItems);
-        // }
         searchItems(searchText) {
             console.log(searchText);
             const searchTextLower = searchText.toLowerCase()

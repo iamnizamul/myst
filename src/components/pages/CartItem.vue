@@ -1,7 +1,6 @@
 <template>
   <div class="cart-item-container">
     <li>
-      <!-- <div class="close">X</div> -->
       <ion-icon name="close-circle" class="close" @click="remove"></ion-icon>
       <router-link  :to="'/itemdetails/' + id">
       <div class="image-container">
@@ -15,13 +14,9 @@
           <h5>{{ title }}</h5>
         </div>
         <h4>Rs. {{ price }}</h4>
-        <!-- <div class="line"></div> -->
         <div class="quantity top-border">
           <h3>Quantity</h3>
           <div class="count">
-            <!-- <button class="add">
-              <h5>+</h5>
-            </button> -->
             <h3 class="minus" @click="subtract">-</h3>
             <h3 class="qtty">{{ quantity }}</h3>
             <h3 class="plus" @click="add">+</h3>
@@ -70,15 +65,9 @@ function remove() {
 </script>
 
 <style scoped>
-.cart-item-container {
-  /* margin: 10rem; */
-  /* background-color: red; */
-}
-
 .cart-item-container li {
   display: flex;
   border: 2px solid #1e612b;
-  /* background-color: red; */
   position: relative;
   width: 50rem;
 }
@@ -97,18 +86,15 @@ cursor: pointer;
 }
 
 .cart-item-container .image-container {
-  /* width: 100%; */
   height: 25rem;
   width: 25rem;
   text-align: center;
   padding: 3rem;
-  /* position: relative; */
   z-index: 100;
 }
 
 .vertical-line {
   position: absolute;
-  /* width: 0; */
   height: 100%;
   right: 50%;
   top: 0;
@@ -122,7 +108,6 @@ cursor: pointer;
 }
 
 .cart-item-container .cart-details-container {
-  /* background: yellow; */
   width: 28rem;
   padding: 3rem;
   position: relative;
@@ -132,7 +117,6 @@ cursor: pointer;
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
-  /* color: #eee; */
 }
 
 .cart-item-container .cart-details-container .title-container {
@@ -151,15 +135,6 @@ cursor: pointer;
   margin-bottom: 2rem;
 }
 
-.cart-item-container .cart-details-container .line {
-/* margin-bottom: 2rem; */
-/* position: absolute;
-border: 1px solid #1e612b;
-width: 85%; */
-/* left: -0.02rem; */
-/* padding: 0; */
-}
-
 .cart-item-container .cart-details-container h3 {
   font-size: 1.8rem;
   font-weight: 500;
@@ -168,7 +143,6 @@ width: 85%; */
 
 .quantity {
   display: flex;
-  /* align-items: center; */
   justify-content: space-between;
 }
 
@@ -178,7 +152,6 @@ width: 85%; */
 
 .count {
   display: flex;
-  /* align-items: center; */
   gap: 1rem;
 }
 

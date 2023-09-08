@@ -1,6 +1,5 @@
 <template>
-  <!-- <div> -->
-    <div class="helper-container-desktop helper-container-palmtop">
+    <div class="helper-container">
       <div class="sub-container">
 
       <div class="gender-filter">
@@ -39,13 +38,10 @@
       </div>
       </div>
     </div>
-    <!-- <div class="helper-container-palmtop">jhbmjhb</div> -->
-  <!-- </div> -->
 </template>
 
 <script setup>
 import { useItemStore } from "../../store/itemStore.js";
-// import { reactive } from 'vue';
 
 const itemStore = useItemStore();
 
@@ -67,47 +63,20 @@ function setFilter(event) {
   console.log(filters);
   itemStore.setFilter(filters);
 }
-
-// const gender = ref('');
-// const styles = ref([]);
-
-// function genderMen() {
-//     itemStore.genderMen();
-// }
-
-// function genderWomen() {
-//     itemStore.genderWomen()
-// }
-
-// function styleTshirts() {
-//     itemStore.styleTshirts()
-// }
-
-// function styleShoes() {
-//     itemStore.styleShoes()
-// }
 </script>
 
 <style scoped>
-.helper-container-desktop {
+.helper-container {
   margin: 2rem 2rem;
   border: 1px solid #1e612b;
   border-radius: 11px;
-  /* text-align: center; */
   padding: 1.8rem 3.6rem;
-  /* background: #eee; */
-  /* min-height: calc(100vh - 9.6rem); */
+
 }
 
-.helper-container-desktop .sub-container {
+.helper-container .sub-container {
   margin: 4rem auto;
-  /* background-color: red; */
-  /* text-align: center; */
   width: max-content;
-}
-
-.helper-container-palmtop {
-  /* display: none; */
 }
 
 .gender-filter {
@@ -139,16 +108,14 @@ label {
 }
 
 @media(max-width: 37.5em) {
-  .helper-container-desktop {
-    /* width: calc(100vw - 6rem); */
-    /* padding: 2rem; */
+  .helper-container {
     width: 55rem;
     margin: 2rem auto;
     width: 80%;
     text-align: center;
   }
 
-  .helper-container-desktop .sub-container {
+  .helper-container .sub-container {
     margin: 0 auto;
   }
 

@@ -17,8 +17,6 @@
       </div>
     </div>
     <div class="item-description-container">
-      <!-- <div class="subcontainer"> -->
-
         <h5>Brand: {{ brand }}</h5>
         <h4>{{ title }}</h4>
         <div class="line"></div>
@@ -34,7 +32,6 @@
             Add to Cart
         </base-button>
       </div>
-    <!-- </div> -->
   </div>
 </template>
 
@@ -88,27 +85,22 @@ console.log(cartStore.getItems.value);
 .item-detail-container {
   display: grid;
   grid-template-columns: 3fr 4fr;
-  gap: 15rem;
-  /* text-align: center; */
+  gap: 10rem;
   padding-top: 5rem;
   margin: auto;
-  padding: 5rem;
+  /* padding: 5rem; */
   width: max-content;
   height: max-content;
 }
 
 .image-detail-container {
-    /* padding: 5rem; */
-}
 
-.image-list-container {
-  /* background: #1e612b; */
-  /* display: flex; */
-  /* height: 5rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .image-list-container ul {
-  /* margin: 2rem; */
   margin-top: 5rem;
   list-style: none;
   text-align: center;
@@ -116,11 +108,6 @@ console.log(cartStore.getItems.value);
 
 .image-list-container li {
   margin-right: 1.6rem;
-  /* background-color: red; */
-  /* height: 6rem;
-  width: 6rem; */
-  /* height: 100%;
-  width: 100%; */
   overflow: hidden;
   border-radius: 10px;
   border: 1px solid #1e612b;
@@ -128,7 +115,10 @@ console.log(cartStore.getItems.value);
   height: 5rem;
   width: 5rem;
   display: inline-block;
+}
 
+.image-list-container li:last-child {
+  margin-right: 0;
 }
 
 .image-list-container li:hover,
@@ -140,27 +130,22 @@ console.log(cartStore.getItems.value);
   height: 100%;
   width: 100%;
   object-fit: contain;
-  /* padding: 1rem; */
 }
 
 .selected-image-container {
-  /* background: yellow; */
-  /* width: 100%;
-    height: 100%; */
     height: 40rem;
-    text-align: center;
+    width: 40rem;
     margin-top: 2rem;
 }
 
 .selected-image-container img {
-  /* padding: 2rem; */
   height: 100%;
   width: 100%;
   object-fit: contain;
+  
 }
 
 .item-description-container {
-  /* background: #bcd0bf; */
   margin: auto ;
   width: max-content;
 }
@@ -175,7 +160,7 @@ console.log(cartStore.getItems.value);
     margin-bottom: 1.2rem;
 }
 .item-description-container h4 {
-    font-size: 3.2rem;
+    font-size: 3rem;
     font-weight: 400;
     margin-bottom: 1.2rem;
 }
