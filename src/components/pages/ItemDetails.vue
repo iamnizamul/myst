@@ -84,13 +84,15 @@ console.log(cartStore.getItems.value);
 <style>
 .item-detail-container {
   display: grid;
-  grid-template-columns: 3fr 4fr;
-  gap: 10rem;
+  grid-template-columns: 4fr 4fr;
+  gap: 5rem;
   padding-top: 5rem;
   margin: auto;
   /* padding: 5rem; */
-  width: max-content;
-  height: max-content;
+  width: 120rem;
+  /* height: max-content; */
+  align-items: center;
+  /* background-color: red; */
 }
 
 .image-detail-container {
@@ -98,6 +100,7 @@ console.log(cartStore.getItems.value);
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 5rem;
 }
 
 .image-list-container ul {
@@ -147,7 +150,11 @@ console.log(cartStore.getItems.value);
 
 .item-description-container {
   margin: auto ;
-  width: max-content;
+  /* width: max-content; */
+  overflow: hidden;
+  /* width: 100%; */
+  padding: 5rem;
+  /* width: max-content; */
 }
 
 .item-description-container ul {
