@@ -34,6 +34,14 @@ console.log(items);
 </script>
 
 <style scoped>
+div {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    width: 120rem;
+    margin: 0 auto;
+}
+
 .cart-heading {
     margin-top: 1.6rem;
     text-align: center;
@@ -53,15 +61,13 @@ console.log(items);
 
 .my-cart-container {
     margin: 5rem auto;
-    width: max-content;
-    text-align: center;
-
+    /* text-align: center; */
 }
 
 .my-cart-container ul {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 5rem;
 }
 
@@ -78,11 +84,15 @@ console.log(items);
 
 @media(max-width:76em) {
     .my-cart-container {
-        padding-left: 8rem;
+        /* padding-left: 8rem; */
     }
 }
 
 @media(max-width: 37.5em) {
+    div{
+        /* display: initial; */
+        width: max-content;
+    }
     .my-cart-container {
         padding: 0;
     }

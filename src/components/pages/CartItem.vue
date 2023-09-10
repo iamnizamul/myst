@@ -17,7 +17,7 @@
         <div class="quantity top-border">
           <h3>Quantity</h3>
           <div class="count">
-            <h3 class="minus" @click="subtract">-</h3>
+            <h3 class="minus" v-if="quantity>1" @click="subtract">-</h3>
             <h3 class="qtty">{{ quantity }}</h3>
             <h3 class="plus" @click="add">+</h3>
           </div>
@@ -49,9 +49,7 @@ const cartStore = useCartStore();
 console.log(props.id);
 
 function subtract() {
-  if (props.quantity > 1) {
     cartStore.subtract(props.id);
-  } else return
 }
 
 function add() {
