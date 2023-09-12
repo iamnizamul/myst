@@ -11,7 +11,7 @@
         <h5 class="products">Cart</h5>
         <ion-icon name="cart-outline" class="cart-icon"></ion-icon>
         <h5 class="cart-length" v-if="cartItems.length">
-            {{ cartItems.length }}
+            {{ cartStore.getTotalQuantity }}
         </h5>
       </router-link>
     </div>

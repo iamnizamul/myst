@@ -193,6 +193,10 @@ p {
     background-color: #15441e;
 }
 
+.add-to-cart:active {
+  background-color: #62906b;
+}
+
 @media(max-width: 37.5em) {
   .item-detail-container {
     display: initial;

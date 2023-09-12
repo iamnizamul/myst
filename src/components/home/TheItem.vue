@@ -118,6 +118,10 @@ console.log(props.title);
   margin: auto;
 }
 
+.add-to-cart-button:active {
+  background-color: #357140;
+}
+
 .add-to-cart-button h3 {
   color: #fff;
 }

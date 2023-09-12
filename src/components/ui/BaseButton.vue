@@ -15,8 +15,7 @@ button {
     transition: all 0.3s ease-out;
 }
 
-button:hover,
-button:active {
+button:hover {
   transition: all 0.3s ease-in;
 }
 </style>

@@ -10,6 +10,11 @@ export const useCartStore = defineStore({
     getters: {
         getItems() {
             return this.items
+        },
+        getTotalQuantity() {
+            return this.items.reduce((accumulator, object) => {
+                return accumulator + object.quantity
+            }, 0)
         }
     },
     actions: {
